@@ -5,8 +5,8 @@ export const UserList = () =>{
     const [users, setUsers] = useState ([])
     const [errorMsg, setErrorMsg] = useState ('')
 
-    const getUser = () => {
-        axios.get('https://jsonplaceholder.typicode.com/users')
+    const getUser = async () => {
+       await axios.get('https://jsonplaceholder.typicode.com/users')
         
         .then(response => {
             setUsers(response.data)
@@ -25,16 +25,18 @@ export const UserList = () =>{
 
     return (
         <>
+           <ul className='list'>
             {
                 users.map(user => 
                     // <div >
-                        <ul key={user.id} className='list'>
-                            <li>{user.name}</li>
-                        </ul>
+                     
+                            <li  key={user.id}>{user.name}</li>
+                       
                         
                     // </div>
                 )
             }
+            </ul>
         </>
     )
 }

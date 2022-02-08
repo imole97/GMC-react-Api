@@ -25,3 +25,7 @@ code {
   background-color: aquamarine;
   max-width: 500px;
 }
+
+li {
+  margin: 10px 0px 10px 0px;
+}
